@@ -1,5 +1,5 @@
-mongoose-lazy-migration (WIP)
-=============================
+mongoose-lazy-migration
+=======================
 
 Based on: [kennethklee/mongoose-rolling-migration](https://github.com/kennethklee/mongoose-rolling-migration)
 
@@ -62,16 +62,16 @@ Open up your migration file. It should have a default `up` and `down` function.
 
 Example:
 ```
-exports.up = function(data, done) {
+exports.up = function(data) {
     data.description = "This is the default description.";
-    done();
+    return data;
 };
 
-exports.down = function(data, done) {
+exports.down = function(data) {
     data['$unset'] = {
         description: ''
     };
-    done();
+    return data;
 };
 ```
 
