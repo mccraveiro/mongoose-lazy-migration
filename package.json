@@ -1,7 +1,15 @@
 {
-  "name": "mongoose-rolling-migration",
-  "version": "0.0.0",
-  "description": "Migrate your mongoose tables as you go.",
+  "name": "mongoose-lazy-migration",
+  "version": "0.0.1",
+  "description": "Migrate your mongoose schemas as you go.",
+  "author": "Mateus Craveiro <mccraveiro@gmail.com>",
+  "contributors": [
+    "Kenneth Lee <kennethkl@gmail.com>"
+  ],
+  "keywords": [
+    "mongoose",
+    "migration"
+  ],
   "engines": {
     "node": ">=0.8.x"
   },
@@ -9,26 +17,12 @@
   "bin": {
     "migrate": "./bin/migrate"
   },
-  "scripts": {
-    "pretest": "./node_modules/jshint/bin/jshint lib test",
-    "test": "NODE_ENV=test ./node_modules/cover/bin/cover run ./node_modules/mocha/bin/_mocha && ./node_modules/cover/bin/cover report html"
-  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/kennethklee/mongoose-rolling-migration.git"
+    "url": "git://github.com/mccraveiro/mongoose-lazy-migration.git"
   },
-  "keywords": [
-    "mongoose",
-    "migration"
-  ],
-  "author": "Kenneth Lee <kennethkl@gmail.com",
   "bugs": {
-    "url": "https://github.com/kennethklee/mongoose-rolling-migration/issues"
-  },
-  "devDependencies": {
-    "cover": "~0.2.9",
-    "mocha": "~1.15.1",
-    "jshint": "~2.3.0"
+    "url": "https://github.com/mccraveiro/mongoose-lazy-migration/issues"
   },
   "directories": {
     "lib": "./lib"

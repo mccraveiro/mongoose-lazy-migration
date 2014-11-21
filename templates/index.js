@@ -8,33 +8,33 @@ var fs = require('fs');
  * List all migration files.
  */
 exports.list = function(tableName) {
-    return fs.readdirSync(__dirname).filter(function(fileName) {
-        return fileName.match(new RegExp('^' + tableName));
-    }).sort();
+  return fs.readdirSync(__dirname).filter(function(fileName) {
+    return fileName.match(new RegExp('^' + tableName));
+  }).sort();
 };
 
 /**
  * Provide a hash of files by version.
  */
 exports.listByVersion = function(tableName) {
-    var list = exports.list(tableName);
+  var list = exports.list(tableName);
 
-    return list.reduce(function(prev, value, index) {
-        var version = parseInt(value.match(/-(\d{4})-/)[1]);
-        prev[version] = value;
-        return prev;
-    }, {});
+  return list.reduce(function(prev, value, index) {
+    var version = parseInt(value.match(/-(\d{4})-/)[1]);
+    prev[version] = value;
+    return prev;
+  }, {});
 }
 
 /**
  * Returns a single migration file
  */
 exports.getVersion = function(tableName, version) {
-    var paddedVersion = String('0000' + version).slice(-4);
+  var paddedVersion = String('0000' + version).slice(-4);
 
-    var versions = fs.readdirSync(__dirname).filter(function(fileName) {
-        return fileName.match(new RegExp('^' + tableName + '-' + paddedVersion));
-    });
+  var versions = fs.readdirSync(__dirname).filter(function(fileName) {
+    return fileName.match(new RegExp('^' + tableName + '-' + paddedVersion));
+  });
 
-    return versions.length > 0 ? versions[0] : false;
+  return versions.length > 0 ? versions[0] : false;
 };

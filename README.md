@@ -1,17 +1,11 @@
-mongoose-rolling-migration
-==========================
+mongoose-lazy-migration (WIP)
+=============================
 
-The benefit of Mongo, is that you can update you data when you get to it. However, I could not find an "as you go" data migration library for Mongo; so I created one.
+Based on: [kennethklee/mongoose-rolling-migration](https://github.com/kennethklee/mongoose-rolling-migration)
 
-This plugin allows you to migrate your large mongo tables as you go. Whenever you query for data, you can migrate that data before you start to render it. This is ideal for web apps that display paginated data.
+Mongoose Lazy Migration is a plugin to manage schema migrations. The advantage of mongodb is that you don't need to migrate all the data at once. Instead of doing so, this plugin execute migrations as you access data. So old untouched data won't be migrated until it is needed.
 
 Warning: If you process large amounts of data at once, the migration may take some time. In this case, you may want to use a background process to migrate all data.
-
-
-requirements
-------------
-
-*  mongo server
 
 
 install
@@ -19,24 +13,23 @@ install
 
 1.  Install the plugin to your node app.
 
-    `npm install -save mongoose-rolling-migration`
+    `npm install -save mongoose-lazy-migration`
 
-2.  Install mongoose rolling migration globally. (For command line)
+2.  Install mongoose lazy migration globally. (For command line)
 
-    `npm install -g mongoose-rolling-migration`
+    `npm install -g mongoose-lazy-migration`
 
 3.  Install the migrate plugin on your schemas.
 
     ```
-    var migrations = require('./migrations');   // The migrations path
-    var migratePlugin = require('mongose-rolling-migration')(migrations);
+    var migrate = require('mongose-lazy-migration');
 
     var UserSchema = new mongoose.Schema({
         username: String,
         password: String
     });
 
-    UserSchema.plugins(migratePlugin);
+    UserSchema.plugins(migrate);
     ```
 
     This plugin adds a new field, `__m`, to your schema to track the record's migration version.
@@ -55,14 +48,14 @@ usage
 
 First, you need a migration script to update your models. To create one, use the `migrate create` command.
 
-`migrate create <table name> <title>`
+`migrate create <collection name> <title>`
 
 Example:
 `migrate create users "Add description"`
 
-This will create migration script in `./migrations` with the filename `<table name>-<version>-<title>`. For example, your first migration on the users table will be `users-001-add-description.js`.
+This will create migration script in `./migrations` with the filename `<collection name>-<version>-<title>`. For example, your first migration on the users collection will be `users-001-add-description.js`.
 
-
+Important Note: collection name is case sensitive!
 
 ### Edit Migration File
 Open up your migration file. It should have a default `up` and `down` function.
@@ -75,62 +68,13 @@ exports.up = function(data, done) {
 };
 
 exports.down = function(data, done) {
-    data.description = undefined;
+    data['$unset'] = {
+        description: ''
+    };
     done();
 };
 ```
 
 ### Perform Migration
 
-You can migrate all your data at once or as you go. Since this plugin is for updating as you go, we'll start with that.
-
-Any form of migration will output to the logs.
-
-#### Migrating as you go
-
-This is for migrating as you get to specific documents. For example, your user listing page or show user details page is perfect for this.
-
-Example:
-
-```
-db.User
-    .findById(id)
-    .migrate()
-    .exec(function(err, user) {
-        res.render('users/show', {user: user});
-    });
-```
-
-You can migrate after processing your data as well. This is safe only if your render works with all versions of data.
-
-```
-db.User
-    .findById(id)
-    .exec(function(err, user) {
-        res.render('users/show', {user: user});
-
-        process.nextTick(function() {
-            db.User.migrate(user);
-        });
-    });
-```
-
-#### Migrate from Server
-
-You can migrate via the server; this is similar to migrating as you go.
-
-```
-db.User
-    .find()
-    .migrate()
-    .exec(function(err, users) {
-        console.log('Migration is complete.');
-    });
-```
-
-final notes
------------
-
-The `.migrate()` method does not migrate when the result set is lean. This means it does not work with `.lean` nor `.populate()` nor any other methods that makes the result set lean.
-
-Hope you find this useful.
+All migrations are executed as you access data (init hook). So you don't need to do anything to migrate your data.

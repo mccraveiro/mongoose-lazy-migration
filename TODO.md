@@ -1,0 +1,3 @@
+- Allow plugin options
+  - custom MIGRATIONS_PATH
+  - custom VERSION_FIELD
