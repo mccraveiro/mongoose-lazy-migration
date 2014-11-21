@@ -29,7 +29,12 @@ install
         password: String
     });
 
-    UserSchema.plugins(migrate);
+    var UserModel = mongoose.model('User', UserSchema);
+
+    UserSchema.plugins(migrate, {
+        collection: 'User',
+        model: UserModel
+    });
     ```
 
     This plugin adds a new field, `__m`, to your schema to track the record's migration version.
