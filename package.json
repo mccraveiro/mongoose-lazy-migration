@@ -1,6 +1,6 @@
 {
   "name": "mongoose-lazy-migration",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Migrate your mongoose schemas as you go.",
   "author": "Mateus Craveiro <mccraveiro@gmail.com>",
   "contributors": [
@@ -30,6 +30,6 @@
   "dependencies": {
     "mongoose": "~3.8.2",
     "slug": "~0.4.0",
-    "async": "~0.2.9"
+    "lodash": "^2.4.1"
   }
 }

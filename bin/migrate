@@ -1,6 +1,4 @@
 #!/bin/bash
-
-INDEX_FILE=$(dirname $0)/../lib/node_modules/mongoose-lazy-migration/templates/index.js
 CLI_FILE=$(dirname $0)/../lib/node_modules/mongoose-lazy-migration/lib/cli.js
 
 function abort() {
@@ -35,8 +33,6 @@ case "$1" in
 
       echo {} > ./migrations/.versions.json
       echo "Created ./migrations/.versions.json"
-
-      cp $INDEX_FILE ./migrations/index.js
     ) | indent
 
     display Ready to migrate.

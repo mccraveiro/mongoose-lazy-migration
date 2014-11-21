@@ -1,4 +1,3 @@
 - Allow plugin options
   - custom MIGRATIONS_PATH
   - custom VERSION_FIELD
-- Remove index.js from migrations directory

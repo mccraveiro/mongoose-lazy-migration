@@ -63,13 +63,15 @@ Open up your migration file. It should have a default `up` and `down` function.
 Example:
 ```
 exports.up = function(data) {
+    // Add description field
     data.description = "This is the default description.";
     return data;
 };
 
 exports.down = function(data) {
-    data['$unset'] = {
-        description: ''
+    // Remove description field
+    data.$unset = {
+        description: 1
     };
     return data;
 };
