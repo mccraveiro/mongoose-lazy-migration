@@ -56,9 +56,9 @@ First, you need a migration script to update your models. To create one, use the
 `migrate create <collection name> <title>`
 
 Example:
-`migrate create users "Add description"`
+`migrate create user "Add description"`
 
-This will create migration script in `./migrations` with the filename `<collection name>-<version>-<title>`. For example, your first migration on the users collection will be `users-001-add-description.js`.
+This will create migration script in `./migrations` with the filename `<collection name>-<version>-<title>`. For example, your first migration on the user collection will be `user-001-add-description.js`.
 
 Important Note: collection name is case sensitive!
 
