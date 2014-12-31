@@ -22,7 +22,7 @@ install
 3.  Install the migrate plugin on your schemas.
 
     ```
-    var migrate = require('mongose-lazy-migration');
+    var migrate = require('mongoose-lazy-migration');
 
     var UserSchema = new mongoose.Schema({
         username: String,
@@ -31,7 +31,7 @@ install
 
     var UserModel = mongoose.model('User', UserSchema);
 
-    UserSchema.plugins(migrate, {
+    UserSchema.plugin(migrate, {
         collection: 'User',
         model: UserModel
     });
