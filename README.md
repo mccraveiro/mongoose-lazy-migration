@@ -22,7 +22,7 @@ install
 3.  Install the migrate plugin on your schemas.
 
     ```
-    var migrate = require('mongose-lazy-migration');
+    var migrate = require('mongoose-lazy-migration');
 
     var UserSchema = new mongoose.Schema({
         username: String,
@@ -31,7 +31,7 @@ install
 
     var UserModel = mongoose.model('User', UserSchema);
 
-    UserSchema.plugins(migrate, {
+    UserSchema.plugin(migrate, {
         collection: 'User',
         model: UserModel
     });
@@ -56,9 +56,9 @@ First, you need a migration script to update your models. To create one, use the
 `migrate create <collection name> <title>`
 
 Example:
-`migrate create users "Add description"`
+`migrate create user "Add description"`
 
-This will create migration script in `./migrations` with the filename `<collection name>-<version>-<title>`. For example, your first migration on the users collection will be `users-001-add-description.js`.
+This will create migration script in `./migrations` with the filename `<collection name>-<version>-<title>`. For example, your first migration on the user collection will be `user-001-add-description.js`.
 
 Important Note: collection name is case sensitive!
 
