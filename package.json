@@ -1,10 +1,11 @@
 {
   "name": "mongoose-lazy-migration",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Migrate your mongoose schemas as you go.",
   "author": "Mateus Craveiro <mccraveiro@gmail.com>",
   "contributors": [
-    "Kenneth Lee <kennethkl@gmail.com>"
+    "Kenneth Lee <kennethkl@gmail.com>",
+    "Theo Lubert <theo.lubert@gmail.com>"
   ],
   "keywords": [
     "mongoose",
