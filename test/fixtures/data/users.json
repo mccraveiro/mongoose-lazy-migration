@@ -1,0 +1,51 @@
+[
+    {
+        "_id": "56d3c5c99579571b0b103c4a",
+        "firstName": "Elon",
+        "nickname": "Elongated",
+        "social": {
+            "facebook": "https://www.facebook.com/Elon-Musk-19958149870/",
+            "twitter": "https://twitter.com/elonmusk",
+            "instagram": "https://www.instagram.com/elonmusk/"
+        },
+        "__v": 0
+    },
+    {
+        "_id": "56d3c6634a93b4da0cc02200",
+        "firstName": "Sergey",
+        "lastName": "Brin",
+        "__v": 0
+    },
+    {
+        "_id": "56d3c6c6418b70640dfc78ac",
+        "firstName": "Sheryl",
+        "lastName": "Sandberg",
+        "nickname": "Sandbags",
+        "social": {
+            "facebook": "https://www.facebook.com/sheryl",
+            "twitter": "https://twitter.com/sherylsandberg",
+            "instagram": "https://www.instagram.com/sherylsandberg/"
+        },
+        "__v": 0
+    },
+    {
+        "_id": "56d3d0dcfab35253117541fb",
+        "firstName": "Mark",
+        "nickname": "Zuc",
+        "social": {
+            "facebook": "https://www.facebook.com/zuck"
+        },
+        "__v": 0
+    },
+    {
+        "_id": "56d3d10d5b26cbd011be45bb",
+        "firstName": "Arianna",
+        "lastName": "Huffington",
+        "social": {
+            "facebook": "https://www.facebook.com/AriannaHuffingtonl",
+            "twitter": "https://twitter.com/ariannahuff",
+            "instagram": "https://www.instagram.com/ariannahuff/"
+        },
+        "__v": 0
+    }
+]
