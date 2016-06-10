@@ -31,6 +31,6 @@
   "dependencies": {
     "lodash": "^2.4.1",
     "mongoose": "^4.4.14",
-    "slug": "~0.4.0"
+    "to-slug-case": "^1.0.0"
   }
 }
