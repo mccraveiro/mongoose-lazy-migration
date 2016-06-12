@@ -1,10 +1,11 @@
 {
   "name": "mongoose-lazy-migration",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "Migrate your mongoose schemas as you go.",
   "author": "Mateus Craveiro <mccraveiro@gmail.com>",
   "contributors": [
-    "Kenneth Lee <kennethkl@gmail.com>"
+    "Kenneth Lee <kennethkl@gmail.com>",
+    "Theo Lubert <theo.lubert@gmail.com>"
   ],
   "keywords": [
     "mongoose",
@@ -17,6 +18,10 @@
   "bin": {
     "migrate": "./bin/migrate"
   },
+  "scripts": {
+    "test": "NODE_ENV=test istanbul cover _mocha -- ./test",
+    "lint": "eslint ./lib ./test"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/mccraveiro/mongoose-lazy-migration.git"
@@ -28,8 +33,18 @@
     "lib": "./lib"
   },
   "dependencies": {
-    "mongoose": "~3.8.2",
-    "slug": "~0.4.0",
-    "lodash": "^2.4.1"
+    "lodash": "^4.5.1",
+    "mongoose": "^4.4.5",
+    "slug": "~0.4.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "5.0.0-beta9",
+    "eslint": "1.10.3",
+    "eslint-config-etaskr": "1.0.2",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.4.5",
+    "moment-timezone": "^0.5.0",
+    "q": "^1.4.1",
+    "should": "^8.2.2"
   }
 }

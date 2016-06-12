@@ -1,0 +1,45 @@
+[
+    {
+        "_id": "56d3de05fb3ebd8320fca69a",
+        "title": "Electric cars will take over the world",
+        "body": "Following a strict mandate on air emissions in California, General Motors launches the EV-1 in 1997. It is an electric automobile that requires no gas, oil, muffler or brake changes and is, seemingly, the world's first perfect car. Yet six years later, GM recalls and destroys the EV-1 fleet. Now, Tesla is the future.",
+        "postedOn": "2016-02-28T00:00:00.000+0000",
+        "author": {
+            "_id": "56d3c5c99579571b0b103c4a",
+            "firstName": "Elon",
+            "nickname": "Elongated",
+            "__v": 0,
+            "social": {
+                "facebook": "https://www.facebook.com/Elon-Musk-19958149870/",
+                "twitter": "https://twitter.com/elonmusk",
+                "instagram": "https://www.instagram.com/elonmusk/"
+            }
+        },
+        "slug": "electric-car",
+        "comments": [
+        ],
+        "__v": 0
+    },
+    {
+        "_id": "56d3df763e98829b22230866",
+        "title": "Lean In: Women, Work, and the Will to Lead",
+        "body": "The book Lean In is focused on encouraging women to pursue their ambitions, and changing the conversation from what we can’t do to what we can do. LeanIn.Org is the next chapter.",
+        "postedOn": "2016-02-27T00:00:00.000+0000",
+        "author": {
+            "_id": "56d3c6c6418b70640dfc78ac",
+            "firstName": "Sheryl",
+            "lastName": "Sandberg",
+            "nickname": "Sandbags",
+            "__v": 0,
+            "social": {
+                "facebook": "https://www.facebook.com/sheryl",
+                "twitter": "https://twitter.com/sherylsandberg",
+                "instagram": "https://www.instagram.com/sherylsandberg/"
+            }
+        },
+        "slug": "lean-in",
+        "comments": [
+        ],
+        "__v": 0
+    }
+]
